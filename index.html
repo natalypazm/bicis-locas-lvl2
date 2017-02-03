@@ -23,27 +23,23 @@
           <div class="name-container input-box">
             <label for="name" class="sr-only">Nombre</label>
             <input type="text" id="name" class="form-control"
-            placeholder="Ingrese su nombre" autofocus="">
+            placeholder="Ingrese su nombre" onkeyup="validateName('name')" autofocus="">
           </div>
           <div class="lastname-container input-box">
             <label for="lastname" class="sr-only">Apellido</label>
             <input type="text" id="lastname" class="form-control"
-            placeholder="Ingrese su apellido">
+            placeholder="Ingrese su apellido" onkeyup="validateName('lastname')">
           </div>
           <div class="email-container input-box">
-            <label for="inputEmail" class="sr-only">
-              Correo Electrónico
-            </label>
-            <input type="email" id="input-email" class="form-control" placeholder="Ingrese su correo electrónico">
-          </div>
+            <label for="inputEmail" class="sr-only">Correo Electrónico</label>
+            <input type="email" id="input-email" class="form-control" placeholder="Ingrese su correo electrónico"  onkeyup="validateEmail(event)"></div>
           <div class="form-group input-box">
             <label for="inputPassword" class="sr-only">
               Contraseña
             </label>
-            <input type="password" id="input-password" class="form-control" placeholder="Ingrese su contraseña">
-          </div>
+            <input type="password" id="input-password" class="form-control" placeholder="Ingrese su contraseña" onkeyup="validatePassword(event)"></div>
           <div class="form-group input-box">
-            <select class="form-control">
+            <select class="form-control" id="select" onchange="validateType(event)">
               <option value="0">Selecciona tu tipo de bici</option>
               <option value="urbana">Urbana</option>
               <option value="treking">Treking</option>
@@ -61,7 +57,8 @@
               <span>Deseo recibir información vía email</span>
             </label>
           </div>
-          <button class="btn btn-lg btn-primary btn-block submit-btn" type="submit" onclick="validateForm()">Registrar</button>
+          <button class="btn btn-lg btn-primary btn-block submit-btn" type="submit">Registrar</button>
+          <div id="mensaje"></div>
         </form>
       </div>  
     </section>
